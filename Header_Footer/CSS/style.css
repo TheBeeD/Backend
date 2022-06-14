@@ -281,9 +281,14 @@ textarea {
     padding: 1.5%;
     border-radius: 1%;
     height: 40vh;
+    max-height: 40vh;
     width: 45vh;
     -webkit-box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61); 
     box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61);
+}
+html body header div#admin-box.box-container div.adminPage div.fold-container.shadow.form-admin div._folderHotline img {
+    max-height: 350px; 
+    max-width:auto;
 }
 
 .title_folderHotline {
