@@ -30,9 +30,14 @@ $produits = $produitStatement->fetchAll();
  <?php
  // HEADER
  include "header.php";
-            
-            echo "<main>"; 
-            echo "<input type=\"text\" class=\"form-control\" name=\"\" id=\"search\" placeholder=\"Recherche\">";
+?>
+        <form>
+        <input type="text" class="form-control" name="search" id="search" placeholder="Recherche">
+        <input type="submit">
+        </form>
+<?php
+            echo "<main>";
+
             echo '<div id="admin-box" class="box-container">';
             if (isset($_SESSION["name"])) {
                 echo '<H2 class="form-legend">Bienvenue ' . $_SESSION['name'] . ' !</H2>'.'<br/>';
@@ -58,18 +63,19 @@ $produits = $produitStatement->fetchAll();
             // On affiche chaque produit un à un
             foreach ($produits as $produit) {
              echo '<div class="_folderHotline"';
-             echo 'Produit:'.$produit['PRD_DESCRIPTION'].'<br/><br/>';
+             echo 'Produit:'.$produit['PRD_DESCRIPTION'].'<br/>'.'<br/>';
             //  echo '<img src='. $produit['PRD_PICTURE'].'>';
              if (empty($produit['PRD_PICTURE'])) {
+                echo $produit['PRD_DESCRIPTION'].'<br/>'.'<br/>';
                 echo '<img src="img/defaut.png"/><br/>';
         } else {
-                echo 'Produit:'.$produit['PRD_DESCRIPTION'].'<br/><br/>';
+                echo $produit['PRD_DESCRIPTION'].'<br/>'.'<br/>';
                 echo '<img src="' . $produit['PRD_PICTURE'] . '"/>'.'<br/>';
         };
-                echo 'Prix: '.$produit['PRD_PRICE'].'€'.'<br/>';
+                echo '<div classe=prix>'.'Prix: '.$produit['PRD_PRICE'].'€'.'<br/>'.'</div>';
                 echo '<br/><br/>';
-            echo '</div>';
-
+                echo '</div>';
+                
             
             }?>
      <!-- FOOTER -->

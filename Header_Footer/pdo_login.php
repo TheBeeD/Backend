@@ -33,7 +33,7 @@
                 if($count > 0)  
                 {  
                     foreach($users as $user) {
-                     $_SESSION["name"] = $user["USR_FIRSTNAME"].' '. $user['USR_LASTNAME'];  
+                     $_SESSION["name"] = $user["USR_USERNAME"];  
                     }
                      header("location:index.php");  
                 }  
@@ -66,18 +66,22 @@
                      echo '<label class="text-danger">'.$message.'</label>';  
                 }  
                 ?>  
-                <h3 text-align="">Hello</h3><br />  
+
                 <form method="post">  
                      <label>Email</label>  
                      <input type="text" name="username" class="form-control" />  
-                     <br />  
+                     <br/>  
                      <label>Password</label>  
                      <input type="password" name="password" class="form-control" />  
-                     <br />  
-                     <input type="submit" name="login" class="btn btn-info" value="Login" />  
+                     <br/>  
+                     <input type="submit" name="login" class="btn btn-info" value="Login" /> 
+                     <br/>
+                     <label>Toujours pas inscrit?, c'est par ici</label>  
+                     <input type="submit" name="inscription" class="btn btn-info" value="Inscription" url="forminscription.php"/> 
                 </form>  
            </div>  
            <br /> 
+
           <?php 
                // FOOTER
                 include "footer.php";
