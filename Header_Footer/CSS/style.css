@@ -134,73 +134,7 @@ background: #ffffffd0;
 .contact-admin:active{
     background: #ffffffcb;
 }
-/* PAGE CREATE */
-/* CREATE FLORENT*/
-.technicienHOTLINE {
-    display: flex;
-    flex-wrap: wrap;
-}
-.floSection {
-    display: flex;
-    flex-direction: row;
-    margin: 6%;
-    margin-top: 4%;
-    width: 50%;
-    font-size: 18px;
-}
 
-.floFieldsetprincipal {
-    border: #5292e6cb 5px ridge;
-    background-color: #e3ecf0;
-    border-radius: 2%;
-    margin: 2%;
-    padding: 2%;
-    min-width: 130%;
-    -webkit-box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61); 
-    box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61);
-}
-.floFieldsetInfo {
-    border: #5292e6cb 2px ridge;
-    background-color: #a7c4e99d;
-    border-radius: 2%;
-    margin: 5% 15%;
-    padding: 2%;
-    width: 70%;
-}
-.floFieldsetDos {
-    border: #5292e6cb 2px ridge;
-    background-color: #a7c4e99d;
-    border-radius: 2%;
-    margin: 2%;
-    padding: 2%;
-}
-.floLegend {
-    padding: 1vh;
-    text-shadow: #5292e6cb 1px 1px 3px ;
-    background-color: white;
-    border-radius: 45%;
-}
-.floLabel {
-    padding: 1%;
-}
-.floButton {
-    margin: 1% 14%;
-    align-items: center;
-    appearance: none;
-    background-color: #5292e6cb;
-    border: 0;
-    border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: inline-flex;
-    height: 48px;
-    justify-content: center;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    font-weight: 700;
-}
 td {
     width: 10rem;
     height: 2rem;
@@ -211,86 +145,43 @@ th {
     background: #387fdbcb;
     border-color: white;
 }
-/*SEARCH CHARLOTTE */
-.chaSection {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2%;
-    margin-left: 35%;
-    padding: 10px 30px;
-    font-size: 18px;
-    min-width: 40%;
-}
-.chaSectionTicket {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2%;
-    margin-left: 5%;
-    padding: 10px 30px;
-    font-size: 18px;
-    min-width: 40%;
-}
 
-.chaFieldsetSearchPrincipal {
-    border: #5292e6cb 5px ridge;
-    background-color: #e3ecf0;
-    min-width: 500px;
-    border-radius: 2%;
-    margin:2%;
-    padding: 2%;
-    border-radius: 1%;
-    height: auto;
-    -webkit-box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61); 
-    box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61);
-}
-.chaFieldsetSearch {
-    border: #5292e6cb 2px ridge;
-    background-color: #a7c4e99d;
-    border-radius: 2%;
-    margin: 12%;
-    padding: 2%;
-}
-label {
-    color: #094088fa;
-    font-weight: 600;
-    padding: 1%;
-}
-input,
-textarea {
-    margin: 1rem;
-    padding: 1%;
-}
-.chaLegend {
-    padding: 1vh;
-    text-shadow: #5292e6cb 1px 1px 3px ;
-    background-color: white;
-    border-radius: 45%;
-}
 .btnSearch {
     padding: 1.5%;
     margin: 0 12%;
 }
+html body header div#admin-box.box-container div.adminPage div.fold-container.shadow.form-admin div {
+
+}
 /* affichage card vue hotline*/
 ._folderHotline {
+  
     border: #5292e6cb 5px ridge;
     background-color: #fff;
     margin-left: 0;
     margin-right: 2%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     padding: 1.5%;
-    border-radius: 1%;
+    border-radius: 3%;
     height: 40vh;
     max-height: 40vh;
     width: 45vh;
     -webkit-box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61); 
     box-shadow: 1px 0px 25px 5px rgba(0,0,0,0.61);
-}
-html body header div#admin-box.box-container div.adminPage div.fold-container.shadow.form-admin div._folderHotline img {
-    max-height: 350px; 
-    max-width:auto;
-}
+    }
+ 
 
+
+#adminpaage img{
+    height: 250px;
+    width: auto;
+}
+#adminpaage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .title_folderHotline {
     text-align: center;
     margin-bottom: 3%;
@@ -332,7 +223,7 @@ footer {
     width: 40%;
 }
 
-/* SOFIANE A PARTIR D'ICI */
+
 
 .adminPage {
     display: flex;
