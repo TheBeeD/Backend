@@ -150,12 +150,11 @@ th {
     padding: 1.5%;
     margin: 0 12%;
 }
-html body header div#admin-box.box-container div.adminPage div.fold-container.shadow.form-admin div {
 
-}
 /* affichage card vue hotline*/
 ._folderHotline {
-  
+    display: flex;
+    flex-wrap: wrap;
     border: #5292e6cb 5px ridge;
     background-color: #fff;
     margin-left: 0;
@@ -199,7 +198,7 @@ hr {
 
 /* FOOTER */
 footer {
-    margin-top: 1%;
+    margin: 1%;
     display: flex;
     flex-direction: row;
     background-color: #5292e6cb;
@@ -407,6 +406,7 @@ td {
     background: #387fdbcb;
     border-color: white;
   }
-  html > body > header > #admin-box.box-container > .adminPage > .fold-container.shadow.form-admin > ._folderHotline > h2{
+  h2{
+    margin-top: 2%;
     margin-right: 0%;
 }

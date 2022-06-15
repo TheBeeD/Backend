@@ -69,10 +69,11 @@ $produits = $produitStatement->fetchAll();
                 echo 'Prix: '.$produit['PRD_PRICE'].'€'.'<br/>';
                 echo '<br/><br/>';
             echo '</div>';
+
             
-            
-            }
-    // FOOTER
+            }?>
+     <!-- FOOTER -->
+<?php    
      include "footer.php";
 ?>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
