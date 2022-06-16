@@ -25,6 +25,7 @@ $produitStatement = $db->prepare('SELECT * FROM t_d_product_prd');
 <?php
 $produitStatement -> execute();
 $produits = $produitStatement->fetchAll();
+$btnId = 0
 ?>
   
  <?php
@@ -64,11 +65,12 @@ $produits = $produitStatement->fetchAll();
             foreach ($produits as $produit) {
              echo '<div class="_folderHotline"';
              echo 'Produit:'.$produit['PRD_DESCRIPTION'].'<br/>'.'<br/>';
-            //  echo '<img src='. $produit['PRD_PICTURE'].'>';
+             echo '<input type="Submit" id=  $btnId."btn">';
+            
              if (empty($produit['PRD_PICTURE'])) {
                 echo $produit['PRD_DESCRIPTION'].'<br/>'.'<br/>';
                 echo '<img src="img/defaut.png"/><br/>';
-        } else {
+           } else {
                 echo $produit['PRD_DESCRIPTION'].'<br/>'.'<br/>';
                 echo '<img src="' . $produit['PRD_PICTURE'] . '"/>'.'<br/>';
         };
@@ -76,8 +78,10 @@ $produits = $produitStatement->fetchAll();
                 echo '<br/><br/>';
                 echo '</div>';
                 
+                $btnId++;
+            }
             
-            }?>
+            ;?>
      <!-- FOOTER -->
 <?php    
      include "footer.php";

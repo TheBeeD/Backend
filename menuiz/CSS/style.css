@@ -203,6 +203,7 @@ hr {
 /* FOOTER */
 footer {
     margin: 1%;
+    margin-bottom: 0%;
     display: flex;
     flex-direction: row;
     background-color: #5292e6cb;

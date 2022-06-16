@@ -3,8 +3,8 @@
         <nav>
             <?php
             if (isset($_SESSION['name'])){
-               echo "<h3> Utilisateur : " .$_SESSION['name']."</h3>";
-                echo '<a href="index.php">Accueil</a>';
+
+                echo '<a href="pdo_login.php">Accueil</a>';
             }
             ?>
             

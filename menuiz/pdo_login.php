@@ -76,8 +76,7 @@
                      <br/>  
                      <input type="submit" name="login" class="btn btn-info" value="Login" /> 
                      <br/>
-                     <label>Toujours pas inscrit?, c'est par ici</label>  
-                     <input type="submit" name="inscription" class="btn btn-info" value="Inscription" url="forminscription.php"/> 
+                     <a href="forminscription.php">Toujours pas inscrit?, c'est ici</a> 
                 </form>  
            </div>  
            <br /> 
