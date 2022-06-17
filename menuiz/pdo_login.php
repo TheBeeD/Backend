@@ -3,7 +3,7 @@
  $host = "localhost";  
  $username = "root";  
  $password = "";  
- $database = "menuiz";  
+ $database = "menuiz2";  
  $message = ""; 
   // HEADER
   include "header.php"; 

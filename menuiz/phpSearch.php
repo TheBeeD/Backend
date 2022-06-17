@@ -3,9 +3,9 @@
 $search = $_POST['search'];
 
 $servername = "localhost";
-$username = "bob";
-$password = "123456";
-$db = "menuiz";
+$username = "root";
+$password = "";
+$db = "menuiz2";
 
 $conn = new mysqli($servername, $username, $password, $db);
 
@@ -13,7 +13,7 @@ if ($conn->connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
-$sql = "select * from students where name like '%$search%'";
+$sql = "select * from prd_description where name like '%$search%'";
 
 $result = $conn->query($sql);
 

@@ -13,7 +13,7 @@
 <?php 
 session_start();
 Try {
-$db = new PDO('mysql:host=localhost;dbname=menuiz;charset=utf8', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=menuiz2;charset=utf8', 'root', '');
 }
 catch (Exception $e) {
 die('Erreur : ' . $e->getMessage());
