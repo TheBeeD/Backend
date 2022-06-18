@@ -28,7 +28,7 @@ $erreur = "Email déjà existante !";
 
 else {
 $ins = $pdo->prepare("insert into t_d_user_usr(USR_LASTNAME,USR_FIRSTNAME,username,USR_PASSWORD, USR_MAIL) values(?,?,?,?,?)");
-if ($ins->execute(array($nom, $prenom, $pseudo, md5($password), $email)))
+if ($ins->execute(array($nom, $prenom, $pseudo, sha1($password), $email)))
 header("location:login.php");
      }
    }

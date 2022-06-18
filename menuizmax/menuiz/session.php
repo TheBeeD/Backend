@@ -50,7 +50,7 @@ text-decoration: underline;
 <h2 class="bienvenue"><?php  echo  $bienvenue  ?></h2>
 <?php
 
- $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz-jo;charset=utf8', 'root', '');
+ $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz2;charset=utf8', 'root', '');
  $produitStatement = $mysqlConnection->prepare('SELECT * FROM T_D_PRODUCT_PRD');
 
  $produitStatement->execute();

@@ -5,6 +5,6 @@
 @$pseudo = $_POST["pseudo"];
 @$password = $_POST["password"];
 @$passwordConf = $_POST["passconf"];
-@$pass_crypt = md5($_POST["password"]);
+@$pass_crypt = sha1($_POST["password"]);
 @$email = $_POST["email"];
 ?>
