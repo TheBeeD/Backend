@@ -1,5 +1,5 @@
 <?php
- 
+@$civilite = $POST["civilite"];
 @$nom = $_POST["nom"];
 @$prenom = $_POST["prenom"];
 @$pseudo = $_POST["pseudo"];

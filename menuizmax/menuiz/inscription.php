@@ -4,7 +4,8 @@ include("infos.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
 if (isset($valider)) {
-if (empty($nom)) $erreur = "Le champs nom est obligatoire !";
+  if (isNull($civilite)) $erreur = "choisissez un sexe !";
+  if (empty($nom)) $erreur = "Le champs nom est obligatoire !";
 elseif (empty($prenom)) $erreur = "Le champs prénom est obligatoire !";
 elseif (empty($pseudo)) $erreur = "Le champs Pseudo est obligatoire !";
 elseif(empty($email)) $erreur = "Le champs Email est obligatoire !";
@@ -24,11 +25,11 @@ $verify_email = $pdo->prepare("select USR_ID from t_d_user_usr where USR_MAIL=? 
 $verify_email->execute(array($email));
 $user_email = $verify_email->fetchAll();
 if (count($user_email) > 0)
-$erreur = "Email déjà existante !";
+$erreur = "Email déjà existant !";
 
 else {
-$ins = $pdo->prepare("insert into t_d_user_usr(USR_LASTNAME,USR_FIRSTNAME,username,USR_PASSWORD, USR_MAIL) values(?,?,?,?,?)");
-if ($ins->execute(array($nom, $prenom, $pseudo, sha1($password), $email)))
+$ins = $pdo->prepare("insert into t_d_user_usr(USR_CIVILITE, USR_LASTNAME, USR_FIRSTNAME, username, USR_PASSWORD, USR_MAIL) values(?,?,?,?,?,?)");
+if ($ins->execute(array($civilite, $nom, $prenom, $pseudo, sha1($password), $email)));
 header("location:login.php");
      }
    }
@@ -97,12 +98,16 @@ text-decoration: underline;
 <h1>Inscription</h1>
 <div  class="erreur"><?php  echo  $erreur  ?></div>
 <form  name="fo"  method="post"  action="">
-<input  type="text"  name="nom"  placeholder="Nom"  value="<?=  $nom  ?>"  /><br  />
-<input  type="text"  name="prenom"  placeholder="Prénom"  value="<?=  $prenom  ?>"  /><br  />
-<input  type="text"  name="pseudo"  placeholder="Votre Pseudo"  value="<?=  $pseudo  ?>"  /><br  />
+<select name="civilite" id="civilite" value="<?=  $civilite  ?>" ><br/>
+    <option value="">--Civilité--</option><br/><br/>
+    <option value="Mr">Monsieur</option>
+    <option value="Mme">Madame</option>   
+<input  type="text"  name="nom"  placeholder="Nom"  value="<?=  $nom  ?>"  /><br/>
+<input  type="text"  name="prenom"  placeholder="Prénom"  value="<?=  $prenom  ?>"  /><br/>
+<input  type="text"  name="pseudo"  placeholder="Votre Pseudo"  value="<?=  $pseudo  ?>"  /><br/>
 <input  type="email" name="email" placeholder="Votre adresse mail"/> <br>
 <input  type="password"  name="password"  placeholder="Mot de passe"  /><br  />
-<input  type="password"  name="passconf"  placeholder="Confirmer votre Mot de passe"  /><br  />
+<input  type="password"  name="passconf"  placeholder="Confirmer votre Mot de passe"  /><br/>
 <input  type="submit"  name="inscrire"  value="S'inscrire"  />
 <a  href="login.php">Deja un compte</a>
 </form>
