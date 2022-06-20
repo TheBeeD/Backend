@@ -2,24 +2,22 @@
  
 session_start();
 include("infos.php");
+include("connexion.php");
 @$valider = $_POST["valider"];
 $erreur = "";
 if (isset($valider)) {
-include("connexion.php");
-$verify = $pdo->prepare("select * from t_d_user_usr where USR_USERNAME=? and USR_PASSWORD=? limit 1");
-$verify->execute(array($pseudo, $pass_crypt));
+$verify = $pdo->prepare("select * from t_d_user_usr where USR_MAIL=? and USR_PASSWORD=? limit 1");
+$verify->execute(array(@$email, $pass_crypt));
 $user = $verify->fetchAll();
 if (count($user) > 0) {
 $_SESSION["prenom_nom"] = $pseudo;
-// ucfirst(strtolower($user[0]["prenom"])) .
-// " "  .  strtoupper($user[0]["nom"]);
 $_SESSION["connecter"] = "yes";
 header("location:session.php");
 } else
 $erreur = "Mauvais login ou mot de passe!";
 }
 ?>
- 
+
 <!DOCTYPE  html>
 <html>
 <head>

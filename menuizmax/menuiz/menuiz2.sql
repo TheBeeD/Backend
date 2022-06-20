@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 20 juin 2022 à 00:11
+-- Généré le : lun. 20 juin 2022 à 16:40
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -322,11 +322,12 @@ CREATE TABLE `t_d_user_usr` (
 -- Déchargement des données de la table `t_d_user_usr`
 --
 
-INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR_FIRSTNAME`, `USR_LASTNAME`, `USR_USERNAME`,`UTY_ID`) VALUES
+INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR_FIRSTNAME`, `USR_LASTNAME`, `USR_USERNAME`, `UTY_ID`) VALUES
 (1, 1, 'efzefz@zfefze.com', 'e38ad214943daad1d64c102faec29de4afe9da3d', 'Paul', 'Marchand', 'Paulo', NULL),
 (2, 3, 'sefqBZN@sfq.com', '2aa60a8ff7fcd473d321e0146afd9e26df395147', 'Bruno', 'Laporte', 'Brutus', NULL),
-(3, 4, 'drgfagra@aerga.com', '1119cfd37ee247357e034a08d844eea25f6fd20f', 'Benoit', 'Gras', 'BEN', NULL);
-
+(3, 4, 'drgfagra@aerga.com', '1119cfd37ee247357e034a08d844eea25f6fd20f', 'Benoit', 'Gras', 'BEN', NULL),
+(10, NULL, 'olivbed@ffff', '2b002dcf5ebaf365d031276a8f5e55d923723c20', 'Olivier', 'Bednarek', 'olivbed', NULL),
+(11, NULL, 'tini@tini', '8b98959eac3e1ed9c667d13a148f4fbceb5d30c2', 'tino', 'Bedard', 'tini', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -503,7 +504,7 @@ ALTER TABLE `t_d_usertype_uty`
 -- AUTO_INCREMENT pour la table `t_d_user_usr`
 --
 ALTER TABLE `t_d_user_usr`
-  MODIFY `USR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `USR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées
