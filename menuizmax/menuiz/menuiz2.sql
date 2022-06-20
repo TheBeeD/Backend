@@ -315,25 +315,18 @@ CREATE TABLE `t_d_user_usr` (
   `USR_FIRSTNAME` varchar(1024) NOT NULL,
   `USR_LASTNAME` varchar(1024) NOT NULL,
   `USR_USERNAME` varchar(20) NOT NULL,
-  `USR_CIVILITE` varchar(4) NOT NULL,
-  `UTY_ID` int(11) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL
+  `UTY_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `t_d_user_usr`
 --
 
-INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR_FIRSTNAME`, `USR_LASTNAME`, `USR_USERNAME`, `USR_CIVILITE`, `UTY_ID`, `username`) VALUES
-(1, 1, 'efzefz@zfefze.com', 'e38ad214943daad1d64c102faec29de4afe9da3d', 'Paul', 'Marchand', 'Paulo', 'Mr', NULL, NULL),
-(2, 3, 'sefqBZN@sfq.com', '2aa60a8ff7fcd473d321e0146afd9e26df395147', 'Bruno', 'Laporte', 'Brutus', 'Mr', NULL, NULL),
-(3, 4, 'drgfagra@aerga.com', '1119cfd37ee247357e034a08d844eea25f6fd20f', 'Benoit', 'Gras', 'BEN', 'Mr', NULL, NULL),
-(4, NULL, 'olivb3d@gmail.com', '3960bd09fd75a13c4c143c1bcd6e7825ae36fdae', 'Olivier', 'Bednarek', 'TheBeD', 'Mr', 2, NULL),
-(5, NULL, 'dfss@dsf', 'f3226f91f77a87d909b8920adc91f9a301a7316b', 'Clothilde', 'Bebert', 'Clo7hilde', 'Mme', NULL, NULL),
-(6, NULL, 'onsenfout@dwwm', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'Magali', 'Prost', 'Lili', 'Mme', NULL, NULL),
-(7, NULL, 'ddddd@ddddd', 'c1c93f88d273660be5358cd4ee2df2c2f3f0e8e7', 'Paul', 'Mirabel', 'Jeanc', '', 1, NULL),
-(8, NULL, 'qsdqsqsqdsqs@ffff', 'd7dacae2c968388960bf8970080a980ed5c5dcb7', 'Jo', 'Opigez', 'Jojo', '', NULL, NULL),
-(9, NULL, 'boby@gmail.com', '94043aa45561a35a127dacbfbcc782eb1df581ea', 'Bob', 'Lebobo', 'Boby', '', NULL, NULL);
+INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR_FIRSTNAME`, `USR_LASTNAME`, `USR_USERNAME`,`UTY_ID`) VALUES
+(1, 1, 'efzefz@zfefze.com', 'e38ad214943daad1d64c102faec29de4afe9da3d', 'Paul', 'Marchand', 'Paulo', NULL),
+(2, 3, 'sefqBZN@sfq.com', '2aa60a8ff7fcd473d321e0146afd9e26df395147', 'Bruno', 'Laporte', 'Brutus', NULL),
+(3, 4, 'drgfagra@aerga.com', '1119cfd37ee247357e034a08d844eea25f6fd20f', 'Benoit', 'Gras', 'BEN', NULL);
+
 
 --
 -- Index pour les tables déchargées

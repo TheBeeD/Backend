@@ -4,8 +4,7 @@ include("infos.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
 if (isset($valider)) {
-  if (isNull($civilite)) $erreur = "choisissez un sexe !";
-  if (empty($nom)) $erreur = "Le champs nom est obligatoire !";
+if (empty($nom)) $erreur = "Le champs nom est obligatoire !";
 elseif (empty($prenom)) $erreur = "Le champs prénom est obligatoire !";
 elseif (empty($pseudo)) $erreur = "Le champs Pseudo est obligatoire !";
 elseif(empty($email)) $erreur = "Le champs Email est obligatoire !";
@@ -13,7 +12,7 @@ elseif (empty($password)) $erreur = "Le champs mot de passe est obligatoire !";
 elseif ($password != $passwordConf) $erreur = "Mots de passe differents !";
 else {
 include("connexion.php");
-$verify_pseudo = $pdo->prepare("select USR_ID from t_d_user_usr where username=? limit 1");
+$verify_pseudo = $pdo->prepare("select USR_ID from t_d_user_usr where USR_USERNAME=? limit 1");
 $verify_pseudo->execute(array($pseudo));
 $user_pseudo = $verify_pseudo->fetchAll();
 if (count($user_pseudo) > 0)
@@ -28,8 +27,8 @@ if (count($user_email) > 0)
 $erreur = "Email déjà existant !";
 
 else {
-$ins = $pdo->prepare("insert into t_d_user_usr(USR_CIVILITE, USR_LASTNAME, USR_FIRSTNAME, username, USR_PASSWORD, USR_MAIL) values(?,?,?,?,?,?)");
-if ($ins->execute(array($civilite, $nom, $prenom, $pseudo, sha1($password), $email)));
+$ins = $pdo->prepare("insert into t_d_user_usr( USR_LASTNAME, USR_FIRSTNAME, USR_USERNAME, USR_PASSWORD, USR_MAIL) values(?,?,?,?,?)");
+if ($ins->execute(array( $nom, $prenom, $pseudo, MD5($password), $email)));
 header("location:login.php");
      }
    }
@@ -98,10 +97,7 @@ text-decoration: underline;
 <h1>Inscription</h1>
 <div  class="erreur"><?php  echo  $erreur  ?></div>
 <form  name="fo"  method="post"  action="">
-<select name="civilite" id="civilite" value="<?=  $civilite  ?>" ><br/>
-    <option value="">--Civilité--</option><br/><br/>
-    <option value="Mr">Monsieur</option>
-    <option value="Mme">Madame</option>   
+
 <input  type="text"  name="nom"  placeholder="Nom"  value="<?=  $nom  ?>"  /><br/>
 <input  type="text"  name="prenom"  placeholder="Prénom"  value="<?=  $prenom  ?>"  /><br/>
 <input  type="text"  name="pseudo"  placeholder="Votre Pseudo"  value="<?=  $pseudo  ?>"  /><br/>

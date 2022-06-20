@@ -6,7 +6,7 @@ include("infos.php");
 $erreur = "";
 if (isset($valider)) {
 include("connexion.php");
-$verify = $pdo->prepare("select * from t_d_user_usr where username=? and USR_PASSWORD=? limit 1");
+$verify = $pdo->prepare("select * from t_d_user_usr where USR_USERNAME=? and USR_PASSWORD=? limit 1");
 $verify->execute(array($pseudo, $pass_crypt));
 $user = $verify->fetchAll();
 if (count($user) > 0) {
