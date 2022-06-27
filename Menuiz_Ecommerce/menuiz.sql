@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 23 juin 2022 à 10:41
+-- Généré le : lun. 27 juin 2022 à 11:09
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `menuiz`
 --
-CREATE DATABASE IF NOT EXISTS `menuiz` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `menuiz`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `menuiz`;
 -- Structure de la table `t_d_address_adr`
 --
 
-DROP TABLE IF EXISTS `t_d_address_adr`;
 CREATE TABLE `t_d_address_adr` (
   `ADR_ID` int(11) NOT NULL,
   `ADR_FIRSTNAME` varchar(1024) NOT NULL,
@@ -67,7 +64,6 @@ INSERT INTO `t_d_address_adr` (`ADR_ID`, `ADR_FIRSTNAME`, `ADR_LASTNAME`, `ADR_L
 -- Structure de la table `t_d_expeditiontype_ety`
 --
 
-DROP TABLE IF EXISTS `t_d_expeditiontype_ety`;
 CREATE TABLE `t_d_expeditiontype_ety` (
   `ETY_ID` int(11) NOT NULL,
   `ETY_WORDING` varchar(1024) NOT NULL
@@ -88,7 +84,6 @@ INSERT INTO `t_d_expeditiontype_ety` (`ETY_ID`, `ETY_WORDING`) VALUES
 -- Structure de la table `t_d_expedition_exp`
 --
 
-DROP TABLE IF EXISTS `t_d_expedition_exp`;
 CREATE TABLE `t_d_expedition_exp` (
   `EXP_ID` int(11) NOT NULL,
   `EXP_WEIGTH` decimal(8,2) DEFAULT NULL,
@@ -117,7 +112,6 @@ INSERT INTO `t_d_expedition_exp` (`EXP_ID`, `EXP_WEIGTH`, `EXP_TRACKINGNUMBER`, 
 -- Structure de la table `t_d_orderdetails_odt`
 --
 
-DROP TABLE IF EXISTS `t_d_orderdetails_odt`;
 CREATE TABLE `t_d_orderdetails_odt` (
   `OHR_ID` int(11) NOT NULL,
   `PRD_ID` int(11) NOT NULL,
@@ -156,7 +150,6 @@ INSERT INTO `t_d_orderdetails_odt` (`OHR_ID`, `PRD_ID`, `EXP_ID`, `ODT_QUANTITY`
 -- Structure de la table `t_d_orderheader_ohr`
 --
 
-DROP TABLE IF EXISTS `t_d_orderheader_ohr`;
 CREATE TABLE `t_d_orderheader_ohr` (
   `OHR_ID` int(11) NOT NULL,
   `ADR_ID_LIV` int(11) NOT NULL,
@@ -190,7 +183,6 @@ INSERT INTO `t_d_orderheader_ohr` (`OHR_ID`, `ADR_ID_LIV`, `ADR_ID_FAC`, `PMT_ID
 -- Structure de la table `t_d_orderstatus_oss`
 --
 
-DROP TABLE IF EXISTS `t_d_orderstatus_oss`;
 CREATE TABLE `t_d_orderstatus_oss` (
   `OSS_ID` int(11) NOT NULL,
   `OSS_WORDING` varchar(1024) NOT NULL
@@ -212,7 +204,6 @@ INSERT INTO `t_d_orderstatus_oss` (`OSS_ID`, `OSS_WORDING`) VALUES
 -- Structure de la table `t_d_paymenttype_pmt`
 --
 
-DROP TABLE IF EXISTS `t_d_paymenttype_pmt`;
 CREATE TABLE `t_d_paymenttype_pmt` (
   `PMT_ID` int(11) NOT NULL,
   `PMT_WORDING` varchar(1024) NOT NULL
@@ -234,7 +225,6 @@ INSERT INTO `t_d_paymenttype_pmt` (`PMT_ID`, `PMT_WORDING`) VALUES
 -- Structure de la table `t_d_productkit_kit`
 --
 
-DROP TABLE IF EXISTS `t_d_productkit_kit`;
 CREATE TABLE `t_d_productkit_kit` (
   `PRD_ID_KIT` int(11) NOT NULL,
   `PRD_ID_COMPONENT` int(11) NOT NULL,
@@ -271,7 +261,6 @@ INSERT INTO `t_d_productkit_kit` (`PRD_ID_KIT`, `PRD_ID_COMPONENT`, `KIT_QUANTIT
 -- Structure de la table `t_d_producttype_pty`
 --
 
-DROP TABLE IF EXISTS `t_d_producttype_pty`;
 CREATE TABLE `t_d_producttype_pty` (
   `PTY_ID` int(11) NOT NULL,
   `PTY_DESCRIPTION` varchar(1024) DEFAULT NULL
@@ -291,7 +280,6 @@ INSERT INTO `t_d_producttype_pty` (`PTY_ID`, `PTY_DESCRIPTION`) VALUES
 -- Structure de la table `t_d_product_prd`
 --
 
-DROP TABLE IF EXISTS `t_d_product_prd`;
 CREATE TABLE `t_d_product_prd` (
   `PRD_ID` int(11) NOT NULL,
   `SPL_ID` int(11) NOT NULL,
@@ -331,7 +319,6 @@ INSERT INTO `t_d_product_prd` (`PRD_ID`, `SPL_ID`, `PTY_ID`, `PRD_DESCRIPTION`, 
 -- Structure de la table `t_d_supplier_spl`
 --
 
-DROP TABLE IF EXISTS `t_d_supplier_spl`;
 CREATE TABLE `t_d_supplier_spl` (
   `SPL_ID` int(11) NOT NULL,
   `SPL_NAME` varchar(1024) DEFAULT NULL
@@ -349,15 +336,24 @@ INSERT INTO `t_d_supplier_spl` (`SPL_ID`, `SPL_NAME`) VALUES
 (5, 'FOURNISSEUR5'),
 (6, 'Non renseigné');
 
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `t_d_usertype_uty`
+--
 
-CREATE TABLE t_d_usertype_uty (
-  UTY_ID int(11) NOT NULL AUTO_INCREMENT,
-  UTY_TYPE varchar(50) NOT NULL,
-  PRIMARY KEY (UTY_ID)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-insert into t_D_usertype_uty (uty_type) values ('VISITOR');
-insert into t_D_usertype_uty (uty_type) values ('ADMIN');
+CREATE TABLE `t_d_usertype_uty` (
+  `UTY_ID` int(11) NOT NULL,
+  `UTY_TYPE` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_d_usertype_uty`
+--
+
+INSERT INTO `t_d_usertype_uty` (`UTY_ID`, `UTY_TYPE`) VALUES
+(1, 'VISITOR'),
+(2, 'ADMIN');
 
 -- --------------------------------------------------------
 
@@ -365,7 +361,6 @@ insert into t_D_usertype_uty (uty_type) values ('ADMIN');
 -- Structure de la table `t_d_user_usr`
 --
 
-DROP TABLE IF EXISTS `t_d_user_usr`;
 CREATE TABLE `t_d_user_usr` (
   `USR_ID` int(11) NOT NULL,
   `ADR_ID` int(11) DEFAULT NULL,
@@ -391,7 +386,8 @@ INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR
 (8, NULL, 'pu@gmail.com', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'pi', 'pa', 1),
 (9, NULL, 'ft@hotmail.fr', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'ft', 'ft', 1),
 (10, NULL, 'toto@gmail.com', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'toto', 'toto', 1),
-(11, NULL, 'titi@gmail.com', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'titi', 'titi', 1);
+(11, NULL, 'titi@gmail.com', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'titi', 'titi', 1),
+(12, NULL, 'bobyone@gmail.com', 'b0665a537a31a97d6f4e054e44901de7fba74396', 'Bednarek', 'Bed', 2);
 
 --
 -- Index pour les tables déchargées
@@ -475,18 +471,18 @@ ALTER TABLE `t_d_supplier_spl`
   ADD PRIMARY KEY (`SPL_ID`);
 
 --
+-- Index pour la table `t_d_usertype_uty`
+--
+ALTER TABLE `t_d_usertype_uty`
+  ADD PRIMARY KEY (`UTY_ID`);
+
+--
 -- Index pour la table `t_d_user_usr`
 --
 ALTER TABLE `t_d_user_usr`
   ADD PRIMARY KEY (`USR_ID`),
   ADD KEY `FK_T_D_USER_A_COMME_I_T_D_ADDR3` (`ADR_ID`),
   ADD KEY `FK_UserType` (`UTY_ID`);
-
-  
--- ALTER TABLE t_d_user_usr
---     ADD CONSTRAINT FK_USERTYPE1 FOREIGN KEY
---     FK_USERTYPEindex (uty_id)
---       REFERENCES t_D_usertype_uty(uty_id);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -559,10 +555,16 @@ ALTER TABLE `t_d_supplier_spl`
   MODIFY `SPL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT pour la table `t_d_usertype_uty`
+--
+ALTER TABLE `t_d_usertype_uty`
+  MODIFY `UTY_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `t_d_user_usr`
 --
 ALTER TABLE `t_d_user_usr`
-  MODIFY `USR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `USR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Contraintes pour les tables déchargées
@@ -608,8 +610,6 @@ ALTER TABLE `t_d_user_usr`
   ADD CONSTRAINT `FK_T_D_USER_A_COMME_I_T_D_ADDR3` FOREIGN KEY (`ADR_ID`) REFERENCES `t_d_address_adr` (`ADR_ID`),
   ADD CONSTRAINT `FK_UserType` FOREIGN KEY (`UTY_ID`) REFERENCES `t_d_usertype_uty` (`UTY_ID`);
 COMMIT;
-
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

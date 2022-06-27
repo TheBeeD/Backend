@@ -106,12 +106,12 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= RACINE_WEB; ?>admin/produits.php">
+                            <a class="nav-link" href="../admin/produits.php">
                                 Gestion produits
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= RACINE_WEB; ?>admin/commande.php">
+                            <a class="nav-link" href="../admin/commande.php">
                                 Gestion des commandes
                             </a>
                         </li>
@@ -124,8 +124,8 @@
     ?>
     <nav class="navbar navbar-expand-md navbar-light " style="background-color: #e3f2fd;">
         <div class="container navbar-nav">
-            <img class="logo headLogo" src="<?= IMG_WEB; ?>MenuizMan_logo.png" alt="logo">
-            <a class="navbar-brand" href="<?= RACINE_WEB; ?>index.php">Boutique</a>
+            <img class="logo headLogo" src="../img/MenuizMan_logo.png" alt="logo">
+            <a class="navbar-brand" href="../index.php">Boutique</a>
 
             <ul class="navbar-nav">
                 <?php
