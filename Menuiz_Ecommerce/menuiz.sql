@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 23 juin 2022 à 14:18
+-- Généré le : jeu. 23 juin 2022 à 10:41
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `menuiz2`
+-- Base de données : `menuiz`
 --
+CREATE DATABASE IF NOT EXISTS `menuiz` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `menuiz`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `t_d_address_adr`
 --
 
+DROP TABLE IF EXISTS `t_d_address_adr`;
 CREATE TABLE `t_d_address_adr` (
   `ADR_ID` int(11) NOT NULL,
   `ADR_FIRSTNAME` varchar(1024) NOT NULL,
@@ -46,10 +49,17 @@ CREATE TABLE `t_d_address_adr` (
 --
 
 INSERT INTO `t_d_address_adr` (`ADR_ID`, `ADR_FIRSTNAME`, `ADR_LASTNAME`, `ADR_LINE1`, `ADR_LINE2`, `ADR_LINE3`, `ADR_ZIPCODE`, `ADR_CITY`, `ADR_COUNTRY`, `ADR_MAIL`, `ADR_PHONE`) VALUES
-(1, 'Bob', 'Morane', '350 avenue Franklin Roosvelt', NULL, NULL, '27000', 'Evreux', 'France', 'bob@gmal.cul', '0625222336]'),
-(2, 'Frederic', 'Erraque', '25 rue du Canada', NULL, NULL, '27000', 'Evreux', 'France', 'fredo@gmal.cul', '0625244334]'),
-(3, 'Marine', 'Lapeine', '25 Place Lorraine', NULL, NULL, '27190', 'La Bonneville', 'France', 'tusseche@gmal.cul', '0625262728]'),
-(4, 'John', 'Doe', 'Non renseigné', NULL, NULL, '00000', 'None', 'None', 'lost@mail.com', '0625233336]');
+(1, '', '', '3 route des coquelicots', NULL, NULL, '27400', 'Louviers', 'Haute-Normandie', 'adressemail@fictive.com', ''),
+(2, 'Non renseigné', 'Non renseigné', 'Non renseigné', NULL, NULL, '00000', 'Non renseigné', 'Non renseigné', 'Non renseigné', ''),
+(3, '', '', '43 rue des souches', NULL, NULL, '76540', 'ROUEN', 'Seine-maritime', 'vieilleadresse@msn.com', ''),
+(4, '', '', '2bis rue de l\'eglise', NULL, NULL, '27110', 'Ecquetot', 'Haite-normandie', 'paysan27@hotmail.com', ''),
+(5, '', '', '3 chemin de l\'escalier', NULL, NULL, '27100', 'Epegard', 'Haute-normandie', 'mailfictif@hotmail.com', ''),
+(6, '', '', '1 rue du centre bourg', NULL, NULL, '27400', 'Louviers', 'Haute-normandie', 'mailinventer@hotmail.com', ''),
+(7, '', '', '4 chemin de la maison', NULL, NULL, '13540', 'Marseille', ' Provence-Alpes-Côte d\'Azur', 'marseille13@hotmail.com', ''),
+(15, 'Guillaume', 'Delacroix', '202 IMPASSE DU GEVAUDAN', '202 IMPASSE DU GEVAUDAN', '202 IMPASSE DU GEVAUDAN', '27190', 'LA BONNEVILLE SUR ITON', 'France', 'gdelacroix@hotmail.fr', '+33624543413'),
+(16, 'toto', 'toto', 'toto', '24540', '', '24540', 'toto', 'fr', 'toto', '02'),
+(17, 'tot', 'tot', 't', '', '', '24568', 'ger', 'fr', 'to', '02'),
+(18, 'titi', 'titi', 'titi', '', '', 'titi', 'titi', 'titi', 'titi', 'titi');
 
 -- --------------------------------------------------------
 
@@ -57,6 +67,7 @@ INSERT INTO `t_d_address_adr` (`ADR_ID`, `ADR_FIRSTNAME`, `ADR_LASTNAME`, `ADR_L
 -- Structure de la table `t_d_expeditiontype_ety`
 --
 
+DROP TABLE IF EXISTS `t_d_expeditiontype_ety`;
 CREATE TABLE `t_d_expeditiontype_ety` (
   `ETY_ID` int(11) NOT NULL,
   `ETY_WORDING` varchar(1024) NOT NULL
@@ -67,9 +78,9 @@ CREATE TABLE `t_d_expeditiontype_ety` (
 --
 
 INSERT INTO `t_d_expeditiontype_ety` (`ETY_ID`, `ETY_WORDING`) VALUES
-(1, 'Colissimo'),
-(2, 'Chronopost'),
-(3, 'Transporteur interne');
+(1, 'COLISSIMO'),
+(2, 'CHRONOPOST'),
+(3, 'TRANSPORTEUR INTERNE');
 
 -- --------------------------------------------------------
 
@@ -77,6 +88,7 @@ INSERT INTO `t_d_expeditiontype_ety` (`ETY_ID`, `ETY_WORDING`) VALUES
 -- Structure de la table `t_d_expedition_exp`
 --
 
+DROP TABLE IF EXISTS `t_d_expedition_exp`;
 CREATE TABLE `t_d_expedition_exp` (
   `EXP_ID` int(11) NOT NULL,
   `EXP_WEIGTH` decimal(8,2) DEFAULT NULL,
@@ -89,7 +101,15 @@ CREATE TABLE `t_d_expedition_exp` (
 --
 
 INSERT INTO `t_d_expedition_exp` (`EXP_ID`, `EXP_WEIGTH`, `EXP_TRACKINGNUMBER`, `EXP_SENTDATE`) VALUES
-(1, '0.00', NULL, '0000-00-00 00:00:00');
+(1, '0.00', 'NaN', '2022-06-07 14:09:15'),
+(2, '0.00', 'NaN', '2022-06-07 14:09:15'),
+(3, '0.00', 'NaN', '2022-06-07 14:09:15'),
+(4, '0.00', 'NaN', '2022-06-07 14:09:15'),
+(5, '0.00', 'NaN', '2022-06-07 14:09:15'),
+(6, '0.00', 'NaN', '2022-06-07 14:09:15'),
+(8, '0.00', '', '2022-06-22 11:21:39'),
+(9, '0.00', '', '2022-06-22 12:54:49'),
+(10, '0.00', '', '2022-06-22 13:06:29');
 
 -- --------------------------------------------------------
 
@@ -97,6 +117,7 @@ INSERT INTO `t_d_expedition_exp` (`EXP_ID`, `EXP_WEIGTH`, `EXP_TRACKINGNUMBER`, 
 -- Structure de la table `t_d_orderdetails_odt`
 --
 
+DROP TABLE IF EXISTS `t_d_orderdetails_odt`;
 CREATE TABLE `t_d_orderdetails_odt` (
   `OHR_ID` int(11) NOT NULL,
   `PRD_ID` int(11) NOT NULL,
@@ -105,12 +126,37 @@ CREATE TABLE `t_d_orderdetails_odt` (
   `ODT_ISCANCELED` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `t_d_orderdetails_odt`
+--
+
+INSERT INTO `t_d_orderdetails_odt` (`OHR_ID`, `PRD_ID`, `EXP_ID`, `ODT_QUANTITY`, `ODT_ISCANCELED`) VALUES
+(1, 2, 1, 5, 0),
+(1, 5, 1, 2, 0),
+(2, 7, 2, 1, 0),
+(2, 8, 2, 3, 0),
+(3, 6, 3, 5, 0),
+(3, 11, 3, 1, 0),
+(4, 2, 4, 10, 0),
+(4, 16, 4, 3, 0),
+(5, 1, 5, 1, 0),
+(5, 3, 5, 1, 0),
+(5, 4, 5, 2, 0),
+(5, 10, 5, 1, 0),
+(6, 9, 6, 3, 0),
+(6, 17, 6, 1, 0),
+(10, 1, 8, 2, 0),
+(11, 2, 9, 1, 0),
+(11, 4, 9, 2, 0),
+(12, 1, 10, 2, 0);
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `t_d_orderheader_ohr`
 --
 
+DROP TABLE IF EXISTS `t_d_orderheader_ohr`;
 CREATE TABLE `t_d_orderheader_ohr` (
   `OHR_ID` int(11) NOT NULL,
   `ADR_ID_LIV` int(11) NOT NULL,
@@ -123,12 +169,28 @@ CREATE TABLE `t_d_orderheader_ohr` (
   `OHR_DATE` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `t_d_orderheader_ohr`
+--
+
+INSERT INTO `t_d_orderheader_ohr` (`OHR_ID`, `ADR_ID_LIV`, `ADR_ID_FAC`, `PMT_ID`, `OSS_ID`, `ETY_ID`, `USR_ID`, `OHR_NUMBER`, `OHR_DATE`) VALUES
+(1, 1, 1, 3, 2, 1, 1, '1', '2022-06-07 13:18:55'),
+(2, 2, 1, 1, 3, 3, 2, '2', '2022-06-07 13:22:24'),
+(3, 2, 2, 1, 2, 2, 3, '3', '2022-06-07 13:22:46'),
+(4, 1, 1, 2, 1, 3, 1, '4', '2022-06-07 13:55:23'),
+(5, 1, 1, 2, 2, 3, 2, '5', '2022-06-07 13:55:23'),
+(6, 1, 1, 2, 4, 3, 3, '6', '2022-06-07 13:55:23'),
+(10, 15, 15, 1, 1, 1, 4, 'ORDER10', '2022-06-22 11:21:39'),
+(11, 17, 16, 1, 1, 1, 10, 'ORDER11', '2022-06-22 12:54:49'),
+(12, 18, 18, 1, 1, 1, 11, 'ORDER12', '2022-06-22 13:06:29');
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `t_d_orderstatus_oss`
 --
 
+DROP TABLE IF EXISTS `t_d_orderstatus_oss`;
 CREATE TABLE `t_d_orderstatus_oss` (
   `OSS_ID` int(11) NOT NULL,
   `OSS_WORDING` varchar(1024) NOT NULL
@@ -141,8 +203,8 @@ CREATE TABLE `t_d_orderstatus_oss` (
 INSERT INTO `t_d_orderstatus_oss` (`OSS_ID`, `OSS_WORDING`) VALUES
 (1, 'En cours'),
 (2, 'Annulé'),
-(3, 'Livré partielllement'),
-(4, 'Livré totalement');
+(3, 'Livré totalement'),
+(4, 'Livré partiellement');
 
 -- --------------------------------------------------------
 
@@ -150,6 +212,7 @@ INSERT INTO `t_d_orderstatus_oss` (`OSS_ID`, `OSS_WORDING`) VALUES
 -- Structure de la table `t_d_paymenttype_pmt`
 --
 
+DROP TABLE IF EXISTS `t_d_paymenttype_pmt`;
 CREATE TABLE `t_d_paymenttype_pmt` (
   `PMT_ID` int(11) NOT NULL,
   `PMT_WORDING` varchar(1024) NOT NULL
@@ -161,9 +224,9 @@ CREATE TABLE `t_d_paymenttype_pmt` (
 
 INSERT INTO `t_d_paymenttype_pmt` (`PMT_ID`, `PMT_WORDING`) VALUES
 (1, 'CB'),
-(2, 'Cheque'),
-(3, 'Virement'),
-(4, 'Espece');
+(2, 'ESPECE'),
+(3, 'CHEQUE'),
+(4, 'VIREMENT');
 
 -- --------------------------------------------------------
 
@@ -171,11 +234,36 @@ INSERT INTO `t_d_paymenttype_pmt` (`PMT_ID`, `PMT_WORDING`) VALUES
 -- Structure de la table `t_d_productkit_kit`
 --
 
+DROP TABLE IF EXISTS `t_d_productkit_kit`;
 CREATE TABLE `t_d_productkit_kit` (
   `PRD_ID_KIT` int(11) NOT NULL,
   `PRD_ID_COMPONENT` int(11) NOT NULL,
   `KIT_QUANTITY` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `t_d_productkit_kit`
+--
+
+INSERT INTO `t_d_productkit_kit` (`PRD_ID_KIT`, `PRD_ID_COMPONENT`, `KIT_QUANTITY`) VALUES
+(8, 1, 5),
+(8, 2, 4),
+(9, 1, 3),
+(9, 3, 3),
+(10, 4, 3),
+(10, 5, 5),
+(11, 6, 2),
+(11, 7, 1),
+(12, 4, 3),
+(12, 7, 2),
+(13, 2, 10),
+(13, 6, 3),
+(16, 1, 5),
+(16, 5, 2),
+(17, 1, 2),
+(17, 3, 5),
+(18, 2, 2),
+(18, 6, 2);
 
 -- --------------------------------------------------------
 
@@ -183,6 +271,7 @@ CREATE TABLE `t_d_productkit_kit` (
 -- Structure de la table `t_d_producttype_pty`
 --
 
+DROP TABLE IF EXISTS `t_d_producttype_pty`;
 CREATE TABLE `t_d_producttype_pty` (
   `PTY_ID` int(11) NOT NULL,
   `PTY_DESCRIPTION` varchar(1024) DEFAULT NULL
@@ -202,6 +291,7 @@ INSERT INTO `t_d_producttype_pty` (`PTY_ID`, `PTY_DESCRIPTION`) VALUES
 -- Structure de la table `t_d_product_prd`
 --
 
+DROP TABLE IF EXISTS `t_d_product_prd`;
 CREATE TABLE `t_d_product_prd` (
   `PRD_ID` int(11) NOT NULL,
   `SPL_ID` int(11) NOT NULL,
@@ -210,54 +300,30 @@ CREATE TABLE `t_d_product_prd` (
   `PRD_GUARANTEE` smallint(6) NOT NULL,
   `PRD_PICTURE` longtext DEFAULT NULL,
   `PRD_PRICE` decimal(8,2) DEFAULT NULL,
-  `PRD_DEFINITION` varchar(1024) NOT NULL
+  `PRD_CODE` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `t_d_product_prd`
 --
 
-INSERT INTO `t_d_product_prd` (`PRD_ID`, `SPL_ID`, `PTY_ID`, `PRD_DESCRIPTION`, `PRD_GUARANTEE`, `PRD_PICTURE`, `PRD_PRICE`, `PRD_DEFINITION`) VALUES
-(4, 1, 1, 'Produit1', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '512.50', ''),
-(5, 1, 1, 'Produit2', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '720.40', ''),
-(6, 1, 1, 'Produit3', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '345.00', ''),
-(7, 1, 1, 'Produit4', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '520.40', ''),
-(8, 1, 1, 'Produit5', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '612.50', ''),
-(9, 1, 2, 'KIT1', 36, NULL, '1512.50', ''),
-(10, 1, 2, 'KIT2', 36, NULL, '3812.50', ''),
-(11, 1, 2, 'KIT3', 36, NULL, '2720.00', ''),
-(12, 2, 1, 'Produit6', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '510.05', ''),
-(13, 2, 1, 'Produit7', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '537.50', ''),
-(14, 2, 1, 'Produit8', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '382.55', ''),
-(15, 2, 1, 'Produit9', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '515.20', ''),
-(16, 2, 1, 'Produit10', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '725.00', ''),
-(17, 1, 2, 'KIT4', 36, NULL, '2548.00', ''),
-(18, 1, 2, 'KIT5', 36, NULL, '3448.80', ''),
-(19, 1, 2, 'KIT6', 36, NULL, '3748.00', ''),
-(21, 3, 1, 'Produit11', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '58.00', ''),
-(22, 3, 1, 'Produit12', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '250.00', ''),
-(23, 3, 1, 'Produit13', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '512.50', ''),
-(24, 3, 1, 'Produit14', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '172.00', ''),
-(25, 3, 1, 'Produit15', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '782.30', ''),
-(26, 3, 2, 'KIT7', 36, NULL, '2650.00', ''),
-(27, 3, 2, 'KIT8', 36, NULL, '2789.00', ''),
-(28, 3, 2, 'KIT9', 36, NULL, '3287.50', ''),
-(29, 4, 1, 'Produit16', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '547.00', ''),
-(30, 4, 1, 'Produit17', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '147.00', ''),
-(31, 4, 1, 'Produit18', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '968.00', ''),
-(32, 4, 1, 'Produit19', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '465.00', ''),
-(33, 4, 1, 'Produit20', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '832.00', ''),
-(34, 4, 2, 'KIT10', 36, NULL, '712.50', ''),
-(35, 4, 2, 'KIT11', 36, NULL, '1352.00', ''),
-(36, 4, 2, 'KIT12', 36, NULL, '5412.00', ''),
-(37, 5, 1, 'Produit21', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '22.70', ''),
-(38, 5, 1, 'Produit22', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '31.20', ''),
-(39, 5, 1, 'Produit23', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '12.50', ''),
-(40, 5, 1, 'Produit24', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '72.45', ''),
-(41, 5, 1, 'Produit25', 36, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '21.00', ''),
-(42, 5, 2, 'KIT13', 24, NULL, '822.70', ''),
-(43, 5, 2, 'KIT14', 24, NULL, '1222.50', ''),
-(44, 5, 2, 'KIT15', 36, NULL, '5225.00', '');
+INSERT INTO `t_d_product_prd` (`PRD_ID`, `SPL_ID`, `PTY_ID`, `PRD_DESCRIPTION`, `PRD_GUARANTEE`, `PRD_PICTURE`, `PRD_PRICE`, `PRD_CODE`) VALUES
+(1, 1, 1, 'PRODUIT_1', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '19.99', 'PRODUIT_1'),
+(2, 2, 1, 'PRODUIT_2', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '14.99', 'PRODUIT_2'),
+(3, 3, 1, 'PRODUIT_3', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '16.99', 'PRODUIT_3'),
+(4, 1, 1, 'PRODUIT_4', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '29.99', 'PRODUIT_4'),
+(5, 2, 1, 'PRODUIT_5', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '34.99', 'PRODUIT_5'),
+(6, 4, 1, 'PRODUIT_6', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '99.99', 'PRODUIT_6'),
+(7, 5, 1, 'PRODUIT_7', 24, 'https://www.mistermenuiserie.com/media/catalog/product/m/m/mms-orleans-coulissant_1.png?optimize=low&fit=bounds&height=648&width=648&canvas=648:648&format=jpeg', '9.99', 'PRODUIT_7'),
+(8, 1, 2, 'KIT_1', 24, NULL, '149.99', 'KIT_1'),
+(9, 1, 2, 'KIT_2', 24, NULL, '89.99', 'KIT_2'),
+(10, 2, 2, 'KIT_3', 24, NULL, '289.99', 'KIT_3'),
+(11, 2, 2, 'KIT_4', 24, NULL, '199.99', 'KIT_4'),
+(12, 1, 2, 'KIT_5', 24, NULL, '99.99', 'KIT_5'),
+(13, 3, 2, 'KIT_6', 24, NULL, '399.99', 'KIT_6'),
+(16, 6, 2, 'KIT_7', 24, NULL, '259.99', 'KIT_7'),
+(17, 6, 2, 'KIT_8', 24, NULL, '109.99', 'KIT_8'),
+(18, 6, 2, 'KIT_9', 24, NULL, '219.99', 'KIT_9');
 
 -- --------------------------------------------------------
 
@@ -265,6 +331,7 @@ INSERT INTO `t_d_product_prd` (`PRD_ID`, `SPL_ID`, `PTY_ID`, `PRD_DESCRIPTION`, 
 -- Structure de la table `t_d_supplier_spl`
 --
 
+DROP TABLE IF EXISTS `t_d_supplier_spl`;
 CREATE TABLE `t_d_supplier_spl` (
   `SPL_ID` int(11) NOT NULL,
   `SPL_NAME` varchar(1024) DEFAULT NULL
@@ -275,31 +342,22 @@ CREATE TABLE `t_d_supplier_spl` (
 --
 
 INSERT INTO `t_d_supplier_spl` (`SPL_ID`, `SPL_NAME`) VALUES
-(1, 'FournisseurA'),
-(2, 'FournisseurB'),
-(3, 'FournisseurC'),
-(4, 'FournisseurD'),
-(5, 'FournisseurE'),
+(1, 'FOURNISSEUR1'),
+(2, 'FOURNISSEUR2'),
+(3, 'FOURNISSEUR3'),
+(4, 'FOURNISSEUR4'),
+(5, 'FOURNISSEUR5'),
 (6, 'Non renseigné');
 
--- --------------------------------------------------------
 
---
--- Structure de la table `t_d_usertype_uty`
---
 
-CREATE TABLE `t_d_usertype_uty` (
-  `UTY_ID` int(11) NOT NULL,
-  `UTY_TYPE` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `t_d_usertype_uty`
---
-
-INSERT INTO `t_d_usertype_uty` (`UTY_ID`, `UTY_TYPE`) VALUES
-(1, 'VISITOR'),
-(2, 'ADMIN');
+CREATE TABLE t_d_usertype_uty (
+  UTY_ID int(11) NOT NULL AUTO_INCREMENT,
+  UTY_TYPE varchar(50) NOT NULL,
+  PRIMARY KEY (UTY_ID)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+insert into t_D_usertype_uty (uty_type) values ('VISITOR');
+insert into t_D_usertype_uty (uty_type) values ('ADMIN');
 
 -- --------------------------------------------------------
 
@@ -307,6 +365,7 @@ INSERT INTO `t_d_usertype_uty` (`UTY_ID`, `UTY_TYPE`) VALUES
 -- Structure de la table `t_d_user_usr`
 --
 
+DROP TABLE IF EXISTS `t_d_user_usr`;
 CREATE TABLE `t_d_user_usr` (
   `USR_ID` int(11) NOT NULL,
   `ADR_ID` int(11) DEFAULT NULL,
@@ -314,26 +373,25 @@ CREATE TABLE `t_d_user_usr` (
   `USR_PASSWORD` varchar(1024) NOT NULL,
   `USR_FIRSTNAME` varchar(1024) NOT NULL,
   `USR_LASTNAME` varchar(1024) NOT NULL,
-  `USR_USERNAME` varchar(20) NOT NULL,
-  `USR_CIVILITE` varchar(4) NOT NULL,
-  `UTY_ID` int(11) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL
+  `UTY_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `t_d_user_usr`
 --
 
-INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR_FIRSTNAME`, `USR_LASTNAME`, `USR_USERNAME`, `USR_CIVILITE`, `UTY_ID`, `username`) VALUES
-(1, 1, 'efzefz@zfefze.com', 'e38ad214943daad1d64c102faec29de4afe9da3d', 'Paul', 'Marchand', 'Paulo', 'Mr', NULL, NULL),
-(2, 3, 'sefqBZN@sfq.com', '2aa60a8ff7fcd473d321e0146afd9e26df395147', 'Bruno', 'Laporte', 'Brutus', 'Mr', NULL, NULL),
-(3, 4, 'drgfagra@aerga.com', '1119cfd37ee247357e034a08d844eea25f6fd20f', 'Benoit', 'Gras', 'BEN', 'Mr', NULL, NULL),
-(4, NULL, 'olivb3d@gmail.com', '3960bd09fd75a13c4c143c1bcd6e7825ae36fdae', 'Olivier', 'Bednarek', 'TheBeD', 'Mr', 2, NULL),
-(5, NULL, 'dfss@dsf', 'f3226f91f77a87d909b8920adc91f9a301a7316b', 'Clothilde', 'Bebert', 'Clo7hilde', 'Mme', NULL, NULL),
-(6, NULL, 'onsenfout@dwwm', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'Magali', 'Prost', 'Lili', 'Mme', NULL, NULL),
-(7, NULL, 'ddddd@ddddd', 'c1c93f88d273660be5358cd4ee2df2c2f3f0e8e7', 'Paul', 'Mirabel', 'Jeanc', '', 1, NULL),
-(8, NULL, 'qsdqsqsqdsqs@ffff', 'd7dacae2c968388960bf8970080a980ed5c5dcb7', 'Jo', 'Opigez', 'Jojo', '', NULL, NULL),
-(9, NULL, 'boby@gmail.com', '94043aa45561a35a127dacbfbcc782eb1df581ea', 'Bob', 'Lebobo', 'Boby', '', NULL, NULL);
+INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR_FIRSTNAME`, `USR_LASTNAME`, `UTY_ID`) VALUES
+(1, 1, 'efzefz@zfefze.com', 'e38ad214943daad1d64c102faec29de4afe9da3d', 'Paul', 'Marchand', 1),
+(2, 3, 'sefqBZN@sfq.com', '2aa60a8ff7fcd473d321e0146afd9e26df395147', 'Bruno', 'Laporte', 1),
+(3, 4, 'drgfagra@aerga.com', '1119cfd37ee247357e034a08d844eea25f6fd20f', 'Benoit', 'Gras', 1),
+(4, NULL, 'gdelacroix@hotmail.fr', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'Delacroix', 'Guillaume', 2),
+(5, NULL, 'test@hotmail.fr', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Test', 'Test', 1),
+(6, NULL, 'rmenard@hotmail.fr', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'Menard', 'Robert', 1),
+(7, NULL, 'pu@hotmail.fr', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'popo', 'pupu', 1),
+(8, NULL, 'pu@gmail.com', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'pi', 'pa', 1),
+(9, NULL, 'ft@hotmail.fr', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'ft', 'ft', 1),
+(10, NULL, 'toto@gmail.com', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'toto', 'toto', 1),
+(11, NULL, 'titi@gmail.com', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'titi', 'titi', 1);
 
 --
 -- Index pour les tables déchargées
@@ -417,18 +475,18 @@ ALTER TABLE `t_d_supplier_spl`
   ADD PRIMARY KEY (`SPL_ID`);
 
 --
--- Index pour la table `t_d_usertype_uty`
---
-ALTER TABLE `t_d_usertype_uty`
-  ADD PRIMARY KEY (`UTY_ID`);
-
---
 -- Index pour la table `t_d_user_usr`
 --
 ALTER TABLE `t_d_user_usr`
   ADD PRIMARY KEY (`USR_ID`),
   ADD KEY `FK_T_D_USER_A_COMME_I_T_D_ADDR3` (`ADR_ID`),
-  ADD KEY `FK_USERTYPE1` (`UTY_ID`);
+  ADD KEY `FK_UserType` (`UTY_ID`);
+
+  
+-- ALTER TABLE t_d_user_usr
+--     ADD CONSTRAINT FK_USERTYPE1 FOREIGN KEY
+--     FK_USERTYPEindex (uty_id)
+--       REFERENCES t_D_usertype_uty(uty_id);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -438,7 +496,7 @@ ALTER TABLE `t_d_user_usr`
 -- AUTO_INCREMENT pour la table `t_d_address_adr`
 --
 ALTER TABLE `t_d_address_adr`
-  MODIFY `ADR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ADR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_expeditiontype_ety`
@@ -450,19 +508,19 @@ ALTER TABLE `t_d_expeditiontype_ety`
 -- AUTO_INCREMENT pour la table `t_d_expedition_exp`
 --
 ALTER TABLE `t_d_expedition_exp`
-  MODIFY `EXP_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `EXP_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_orderdetails_odt`
 --
 ALTER TABLE `t_d_orderdetails_odt`
-  MODIFY `OHR_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `OHR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_orderheader_ohr`
 --
 ALTER TABLE `t_d_orderheader_ohr`
-  MODIFY `OHR_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `OHR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_orderstatus_oss`
@@ -480,7 +538,7 @@ ALTER TABLE `t_d_paymenttype_pmt`
 -- AUTO_INCREMENT pour la table `t_d_productkit_kit`
 --
 ALTER TABLE `t_d_productkit_kit`
-  MODIFY `PRD_ID_KIT` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PRD_ID_KIT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_producttype_pty`
@@ -492,7 +550,7 @@ ALTER TABLE `t_d_producttype_pty`
 -- AUTO_INCREMENT pour la table `t_d_product_prd`
 --
 ALTER TABLE `t_d_product_prd`
-  MODIFY `PRD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `PRD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_supplier_spl`
@@ -501,16 +559,10 @@ ALTER TABLE `t_d_supplier_spl`
   MODIFY `SPL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT pour la table `t_d_usertype_uty`
---
-ALTER TABLE `t_d_usertype_uty`
-  MODIFY `UTY_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT pour la table `t_d_user_usr`
 --
 ALTER TABLE `t_d_user_usr`
-  MODIFY `USR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `USR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées
@@ -554,8 +606,10 @@ ALTER TABLE `t_d_product_prd`
 --
 ALTER TABLE `t_d_user_usr`
   ADD CONSTRAINT `FK_T_D_USER_A_COMME_I_T_D_ADDR3` FOREIGN KEY (`ADR_ID`) REFERENCES `t_d_address_adr` (`ADR_ID`),
-  ADD CONSTRAINT `FK_USERTYPE1` FOREIGN KEY (`UTY_ID`) REFERENCES `t_d_usertype_uty` (`UTY_ID`);
+  ADD CONSTRAINT `FK_UserType` FOREIGN KEY (`UTY_ID`) REFERENCES `t_d_usertype_uty` (`UTY_ID`);
 COMMIT;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
