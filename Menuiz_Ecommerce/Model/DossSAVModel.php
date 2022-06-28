@@ -26,7 +26,7 @@ class ModeleDossierSAV{
 
     public function lireDossierViaDate($date) {
         $this->connexion();
-        $res = $this->idc->prepare("SELECT csf.* FROM T_D_customerservicefolder_csf csf inner join t_d_tickethistory_thy thy on csf.thi_ID WHERE thi.thi_interventiontime = ?");
+        $res = $this->idc->prepare("SELECT csf.* FROM T_D_customerservicefolder_csf csf inner join t_d_ticketSavDetail_tsd tsd on csf.TSD_ID WHERE tsd.tsd_interventiontime = ?");
         $res->execute($date);  
         return $res;
     }
