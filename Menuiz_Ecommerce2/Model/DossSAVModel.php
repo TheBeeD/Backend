@@ -31,7 +31,7 @@ class ModeleDossierSAV{
         return $res;
     }
 
-    public function InsertDossier($csfStatus, $csfDescription, $ohr, $usr, $prd)
+    public function InsertDossier($csfStatus, $csfDescription, $ohr, $usr, $prd, $tsd)
     {
         $this->connexion();
         $query = 'INSERT INTO T_D_customerservicefolder_csf
@@ -40,7 +40,8 @@ class ModeleDossierSAV{
             CSF_DESCRIPTION,
             OHR_ID,
             USR_ID,
-            PRD_ID
+            PRD_ID,
+            TSD_ID
             
         )
          VALUES (
@@ -48,7 +49,8 @@ class ModeleDossierSAV{
             :csfDescription,
             :ohr,
             :usr,
-            :prd
+            :prd,
+            :tsd
         )'; 
 
         $stmt = $this->idc->prepare($query);
@@ -57,12 +59,13 @@ class ModeleDossierSAV{
             ':csfDescription' => $csfDescription,
             ':ohr' => $ohr,
             ':usr' => $usr,
-            ':prd' => $prd
+            ':prd' => $prd,
+            ':tsd' => $tsd
 
         ]);
     }
 
 };
 
-//par alexis
+//par alexis le 27 et 28 juin
 ?>

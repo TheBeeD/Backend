@@ -7,7 +7,7 @@ class ModeleAddress
     private function connexion()
     {
 
-        $this->idc = new PDO("mysql:host=localhost;  dbname=menuiz", 'root', '');
+        $this->idc = new PDO("mysql:host=localhost;  dbname=menuiz3", 'root', '');
      
     }
 
@@ -28,33 +28,33 @@ class ModeleAddress
         $query="
         select ohr.usr_id,
             adr.*,
-            concat( adr_firstname , ' ' , adr_lastname  , CHAR(13) ,
-            adr_line1 , CHAR(13) , IFNULL(adr_line2,'') , CHAR(13) ,
-            IFNULL(adr_line3,'') , CHAR(13) , 
-            adr_zipcode , ' ' , adr_city , CHAR(13)
-            , adr_country) as completadress
+            adr_firstname + ' ' + adr_lastname  + CHAR(13) +
+            adr_line1 + CHAR(13) + adr_line2 + CHAR(13) +
+            adr_line3 + CHAR(13) + 
+            adr_zipcode + ' ' + adr_city + CHAR(13)
+            + adr_country as completadress
         from t_d_address_adr adr 
         inner join t_d_orderheader_ohr ohr on adr.ADR_ID=ohr.ADR_ID_FAC 
         where usr_id=" . $usrid . "
         union
         select ohr.usr_id,
             adr.*,
-            concat( adr_firstname , ' ' , adr_lastname  , CHAR(13) ,
-            adr_line1 , CHAR(13) , IFNULL(adr_line2,'') , CHAR(13) ,
-            IFNULL(adr_line3,'') , CHAR(13) , 
-            adr_zipcode , ' ' , adr_city , CHAR(13)
-            , adr_country) as completadress
+            adr_firstname + ' ' + adr_lastname  + CHAR(13) +
+            adr_line1 + CHAR(13) + adr_line2 + CHAR(13) +
+            adr_line3 + CHAR(13) + 
+            adr_zipcode + ' ' + adr_city + CHAR(13)
+            + adr_country as completadress
         from t_d_address_adr adr 
         inner join t_d_orderheader_ohr ohr on adr.ADR_ID=ohr.ADR_ID_liv  
         where  USR_ID=" . $usrid . "
         union 
         select usr.usr_id, 
             adr.*,
-            concat( adr_firstname , ' ' , adr_lastname  , CHAR(13) ,
-            adr_line1 , CHAR(13) , IFNULL(adr_line2,'') , CHAR(13) ,
-            IFNULL(adr_line3,'') , CHAR(13) , 
-            adr_zipcode , ' ' , adr_city , CHAR(13)
-            , adr_country) as completadress 
+            adr_firstname + ' ' + adr_lastname  + CHAR(13) +
+            adr_line1 + CHAR(13) + adr_line2 + CHAR(13) +
+            adr_line3 + CHAR(13) + 
+            adr_zipcode + ' ' + adr_city + CHAR(13)
+            + adr_country as completadress
         from t_d_address_adr adr 
         inner join t_d_user_usr usr on adr.ADR_ID=usr.ADR_ID  
         where  USR_ID= " . $usrid . ";";
@@ -62,6 +62,7 @@ class ModeleAddress
         $res->execute();
         return $res;
     }
+
 
      //Fonction pour vérifier qu'une adresse saisie n'existe pas déjà pour l'utilisateur
      public function VerifAddressByUser($usrid,$adrSaisie)

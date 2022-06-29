@@ -22,7 +22,7 @@ $produit = $stmt->fetchAll();
 
  */
 
-require __DIR__ . '/../layout/top2.php';
+require __DIR__ . '/../layout/top.php';
 ?>
 
 <h1>Gestion Produits</h1>
@@ -53,11 +53,11 @@ require __DIR__ . '/../layout/top2.php';
         
         <td>
             <a class="btn btn-primary"
-               href="produit-edit.php?id=<?= $item['PRD_ID']; ?>">
+               href="<?= RACINE_WEB; ?>produit-edit.php?id=<?= $item['PRD_ID']; ?>">
                Modifier
             </a>
         <a class="btn btn-danger"
-               href="produit-delete.php?id=<?= $item['PRD_ID']; ?>" onclick="myFunction()">
+               href="<?= RACINE_WEB; ?>produit-delete.php?id=<?= $item['PRD_ID']; ?>" onclick="myFunction()">
                Supprimer
             </a>
         </td>

@@ -23,16 +23,16 @@ class ModeleTicketDetail{
         $query = 'INSERT INTO T_D_ticketSavDetail_tsd
         ( 
             tsd_IP,
-            tsd_INTERVENTIONTIME
-            tsd_DESCRIPTION
-            USR_ID
+            tsd_DESCRIPTION,
+            USR_ID,
+            ADR_ID
             
         )
          VALUES (
-            :tsdIp,
-            :interventiontime,
+            :tsdIp
             :tsdDescription,
             :usr
+            :adr
         )'; 
 
         $stmt = $this->idc->prepare($query);
@@ -40,11 +40,12 @@ class ModeleTicketDetail{
             ':tsdIp' => $tsdIP,
             ':interventiontime' => $interventionTime,
             ':tsdDescription' => $tsdDescription,
-            ':usr' => $usr
+            ':usr' => $usr,
+            ':adr' => $adr
 
         ]);
     }
 
 };
-//par alexis
+//par alexis le 27 et 28 juin
 ?>

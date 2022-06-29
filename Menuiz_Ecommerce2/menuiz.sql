@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 juin 2022 à 11:09
+-- Généré le : mer. 29 juin 2022 à 13:41
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -167,13 +167,13 @@ CREATE TABLE `t_d_orderheader_ohr` (
 --
 
 INSERT INTO `t_d_orderheader_ohr` (`OHR_ID`, `ADR_ID_LIV`, `ADR_ID_FAC`, `PMT_ID`, `OSS_ID`, `ETY_ID`, `USR_ID`, `OHR_NUMBER`, `OHR_DATE`) VALUES
-(1, 1, 1, 3, 2, 1, 1, '1', '2022-06-07 13:18:55'),
-(2, 2, 1, 1, 3, 3, 2, '2', '2022-06-07 13:22:24'),
-(3, 2, 2, 1, 2, 2, 3, '3', '2022-06-07 13:22:46'),
-(4, 1, 1, 2, 1, 3, 1, '4', '2022-06-07 13:55:23'),
-(5, 1, 1, 2, 2, 3, 2, '5', '2022-06-07 13:55:23'),
+(1, 1, 1, 3, 2, 1, 1, '1', '2022-06-28 09:01:55'),
+(2, 2, 1, 1, 2, 3, 2, '2', '2022-06-28 06:21:03'),
+(3, 2, 2, 1, 1, 2, 3, '3', '2022-06-28 07:04:53'),
+(4, 1, 1, 2, 4, 3, 1, '4', '2022-06-28 07:05:07'),
+(5, 1, 1, 2, 2, 3, 2, '5', '2022-06-28 06:21:12'),
 (6, 1, 1, 2, 4, 3, 3, '6', '2022-06-07 13:55:23'),
-(10, 15, 15, 1, 1, 1, 4, 'ORDER10', '2022-06-22 11:21:39'),
+(10, 15, 15, 1, 2, 1, 4, 'ORDER10', '2022-06-28 07:19:46'),
 (11, 17, 16, 1, 1, 1, 10, 'ORDER11', '2022-06-22 12:54:49'),
 (12, 18, 18, 1, 1, 1, 11, 'ORDER12', '2022-06-22 13:06:29');
 
@@ -353,7 +353,9 @@ CREATE TABLE `t_d_usertype_uty` (
 
 INSERT INTO `t_d_usertype_uty` (`UTY_ID`, `UTY_TYPE`) VALUES
 (1, 'VISITOR'),
-(2, 'ADMIN');
+(2, 'ADMIN'),
+(3, 'SAV'),
+(4, 'HOTLINE');
 
 -- --------------------------------------------------------
 
@@ -558,7 +560,7 @@ ALTER TABLE `t_d_supplier_spl`
 -- AUTO_INCREMENT pour la table `t_d_usertype_uty`
 --
 ALTER TABLE `t_d_usertype_uty`
-  MODIFY `UTY_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `UTY_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_user_usr`

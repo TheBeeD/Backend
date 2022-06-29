@@ -5,7 +5,6 @@ require __DIR__ .'/Model/ProduitModel.php';
 $Total = 0;
 $Quantite = 0;
 
-
 if (isset($_GET['action'])) {
 
     if ($_GET['action'] == 'ajout') {
@@ -24,7 +23,7 @@ if (empty($_SESSION['panier'])) {
 
     setFlashMessage('Le panier est vide');
 
-    //le bouton commander doit être non cliquable
+    //le bouton commandé doit être non cliquable
 }
 
 if (isset($_POST['commander'])) {
@@ -49,7 +48,7 @@ if (isset($_POST['commander'])) {
     //     }
 
     //     $_SESSION['panier']=[];
-    //     setFlashMessage('La commande est enregistré');
+    //     setFlashMessage('La commande est enregistrée');
     header('Location: page_creation_commande.php');
     die;
 

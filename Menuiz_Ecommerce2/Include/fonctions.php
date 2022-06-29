@@ -68,16 +68,8 @@ function getUserFullName()
 function isUserAdmin()
 {
     return isUserConnected()
-        && $_SESSION['utilisateur']['role'] =='ADMIN' ;
-       
+        && $_SESSION['utilisateur']['role'] == 'ADMIN';
 }
-function isUserSAV()
-{
-    return isUserConnected()
-        && $_SESSION['utilisateur']['role'] == 'SAV';
-       
-}
-
 function isUserVisitor()
 {
     return isUserConnected()
