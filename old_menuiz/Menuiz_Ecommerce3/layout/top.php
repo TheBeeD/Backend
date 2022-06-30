@@ -98,30 +98,27 @@
 
 <body>
     <?php
-    if (isUserAdmin()) :
+    if (isUserSav()){
     ?>
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-md navbar-dark bg-success">
             <div class="container navbar-nav">
-                <a class="navbar-brand" href="#">Admin</a>
+                <a class="navbar-brand" href="#">SAV</a>
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
-                        
                         <li class="nav-item">
-                            <a     class="nav-link" onclick="history.back() ">
-                                Retour
-                            </a>
+                            
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="/dossierSAV.php">Dossier SAV </a>
+                        </li>
+                        <li class="nav-item">
+                            
                     </li>
                     </ul>
                 </div>
             </div>
         </nav>
     <?php
-    endif;
-    ?>
-     <?php
+    }
     if(isUserHotline()){
     ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-danger">
@@ -143,33 +140,36 @@
         </nav>
     <?php
     }
+    if (isUserAdmin()) :
     ?>
-     <?php
-    if (isUserSav()){
-    ?>
-    <nav class="navbar navbar-expand-md navbar-dark bg-success">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
             <div class="container navbar-nav">
-                <a class="navbar-brand" href="#">SAV</a>
+                <a class="navbar-brand" href="#">Admin</a>
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            // ICI POUR LES LIEN
+                            <a class="nav-link" href="admin/produits.php">
+                                Gestion produits
+                            </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="admin/commande.php">
+                                Gestion des commandes
+                            </a>
                         </li>
                         <li class="nav-item">
-                            
+                        <a class="nav-link" href="option.php">Option</a>
                     </li>
                     </ul>
                 </div>
             </div>
         </nav>
     <?php
-    }
+    endif;
     ?>
     <nav class="navbar navbar-expand-md navbar-light " style="background-color: #e3f2fd;">
         <div class="container navbar-nav">
-            <img class="logo headLogo" src="/img/MenuizMan_logo.png" alt="logo">
+            <img class="logo headLogo" src="<?= IMG_WEB; ?>MenuizMan_logo.png" alt="logo">
             <a class="navbar-brand" href=" /index.php">Boutique</a>
            
 
@@ -183,7 +183,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../deconnexion.php">Deconnexion</a>
+                        <a class="nav-link" href="<?= RACINE_WEB; ?>deconnexion.php">Deconnexion</a>
                     </li>
 
                 <?php
@@ -195,19 +195,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= RACINE_WEB; ?>connexion.php">Connexion</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="connexion.php">Option</a>
-                    </li>
                 <?php
                 endif;
                 ?>
-              
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= RACINE_WEB; ?>panier.php">Panier</a>
+                </li>
+
                 <?php
     if (isUserVisitor()) :
     ?>
         
                         <li class="nav-item">
-                            <a class="nav-link" href=" ">mescommandes.php">
+                            <a class="nav-link" href="<?= RACINE_WEB; ?>mescommandes.php">
                                 Mes Commandes
                             </a>
                         </li>

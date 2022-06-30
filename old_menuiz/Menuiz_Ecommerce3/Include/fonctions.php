@@ -68,27 +68,21 @@ function getUserFullName()
 function isUserAdmin()
 {
     return isUserConnected()
-        && $_SESSION['utilisateur']['role'] == 'ADMIN';
+        && $_SESSION['utilisateur']['role'] =='ADMIN' ;
+       
 }
+function isUserSAV()
+{
+    return isUserConnected()
+        && $_SESSION['utilisateur']['role'] == 'SAV';
+       
+}
+
 function isUserVisitor()
 {
     return isUserConnected()
         && $_SESSION['utilisateur']['role'] == 'Visitor';
 }
-
-
-function isUserSav()
-{
-    return isUserConnected()
-        && $_SESSION['utilisateur']['role'] == 'SAV';
-}
-function isUserHotline()
-{
-    return isUserConnected()
-        && $_SESSION['utilisateur']['role'] == 'HOTLINE';
-}
-
-
 
 function adminSecurity()
 {
@@ -103,39 +97,7 @@ function adminSecurity()
         die;
     }
 }
-
-
-
-function savSecurity()
-{
-    if (!isuserAdmin() && !isUserVisitor() && !isUserSav()) {
-        if (!isUserConnected()) {
-            header('location: ' . RACINE_WEB . 'connexion.php');
-        } else {
-            header('HTTP/1.1 403 Forbidden');
-            echo "Vous n'avez pas le droit d'acceder à cette page";
-        }
-
-        die;
-    }
-}
-
-function hotlineSecurity()
-{
-    if (!isuserAdmin() && !isUserVisitor() && !isUserSav() && !isUserHotline()) {
-        if (!isUserConnected()) {
-            header('location: ' . RACINE_WEB . 'connexion.php');
-        } else {
-            header('HTTP/1.1 403 Forbidden');
-            echo "Vous n'avez pas le droit d'acceder à cette page";
-        }
-
-        die;
-    }
-}
-
-
-// Panier
+//region 'Panier'
 function prixFR($prix)
 {
     return number_format($prix, 2, ',', ' ') . ' €';

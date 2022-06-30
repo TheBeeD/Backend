@@ -47,9 +47,8 @@ class ModeleOrderDetail
             :ohrid,
             :prdid,
             :expid,
-            :quantity,
-            0
-            )'; 
+             :quantity  ,0
+        )'; 
 
         $stmt = $this->idc->prepare($query);
         $stmt->execute([

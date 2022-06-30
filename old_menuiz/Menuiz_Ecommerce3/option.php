@@ -86,15 +86,15 @@ endif;
    
     <div class="form-group">
         <label>Nom</label>
-        <input type="text" name="nom" class="form-control" required value="<?= $nom; ?>">
+        <input type="text" name="nom" class="form-control" value="<?= $nom; ?>">
     </div>
     <div class="form-group">
         <label>Prenom</label>
-        <input type="text" name="prenom" class="form-control" required value="<?= $prenom ?>">
+        <input type="text" name="prenom" class="form-control" value="<?= $prenom ?>">
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="text" name="email" class="form-control" required value="<?= $email; ?>">
+        <input type="text" name="email" class="form-control" value="<?= $email; ?>">
     </div>
    
     <div class="form-group">

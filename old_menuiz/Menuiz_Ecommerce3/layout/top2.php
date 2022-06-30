@@ -121,52 +121,6 @@
     <?php
     endif;
     ?>
-     <?php
-    if(isUserHotline()){
-    ?>
-    <nav class="navbar navbar-expand-md navbar-dark bg-danger">
-            <div class="container navbar-nav">
-                <a class="navbar-brand" href="#">Hotline</a>
-                <div class="navbar-collapse">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            
-                        </li>
-                        <li class="nav-item">
-                        </li>
-                        <li class="nav-item">
-                            
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    <?php
-    }
-    ?>
-     <?php
-    if (isUserSav()){
-    ?>
-    <nav class="navbar navbar-expand-md navbar-dark bg-success">
-            <div class="container navbar-nav">
-                <a class="navbar-brand" href="#">SAV</a>
-                <div class="navbar-collapse">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            // ICI POUR LES LIEN
-                        </li>
-                        <li class="nav-item">
-                        </li>
-                        <li class="nav-item">
-                            
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    <?php
-    }
-    ?>
     <nav class="navbar navbar-expand-md navbar-light " style="background-color: #e3f2fd;">
         <div class="container navbar-nav">
             <img class="logo headLogo" src="/img/MenuizMan_logo.png" alt="logo">
@@ -183,7 +137,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../deconnexion.php">Deconnexion</a>
+                        <a class="nav-link" href="<?= RACINE_WEB; ?>deconnexion.php">Deconnexion</a>
                     </li>
 
                 <?php

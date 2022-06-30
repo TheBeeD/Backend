@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ .'/Include\init.php';
+require_once __DIR__ .'/Include/init.php';
 
 require __DIR__ .'/Model/UserModel.php';
 
@@ -60,7 +60,7 @@ if(!empty($_POST)){
 if (empty($error)){
 
 
-        $userID=$userM->InsertUserDroit($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp'],$_POST['droit']);
+        $userID=$userM->InsertUser($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp']);
     //   echo $userID;
      
       setFlashMessage('Votre compte est créé (Id: '.$userID.' ). Veuillez vous connecter (Veuillez notez que vous avez un profil utilisateur Client. Si vous voulez d autres droits, contactez l administrateur de base de données.)');
@@ -69,7 +69,7 @@ if (empty($error)){
    }
 }
 
-require __DIR__ .'/layout/top2.php';
+require __DIR__ .'/layout/top.php';
 
 if (!empty($errors)) :
 ?>
@@ -81,20 +81,20 @@ if (!empty($errors)) :
 endif;
 ?>
 
-<h1 class="offset-3">Creation utilisateur avec droit</h1>
+<h1>Inscription</h1>
 <form method="post" class="inscrip_form">
    
     <div class="form-group">
         <label>Nom</label>
-        <input type="text" name="nom" class="form-control" required value="<?= $nom; ?>">
+        <input type="text" name="nom" class="form-control" value="<?= $nom; ?>">
     </div>
     <div class="form-group">
         <label>Prenom</label>
-        <input type="text" name="prenom" class="form-control" required value="<?= $prenom ?>">
+        <input type="text" name="prenom" class="form-control" value="<?= $prenom ?>">
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="text" name="email" class="form-control" required value="<?= $email; ?>">
+        <input type="text" name="email" class="form-control" value="<?= $email; ?>">
     </div>
    
     <div class="form-group">
@@ -105,23 +105,12 @@ endif;
         <label>Confirmation du mot de passe</label>
         <input type="password" name="mdp_confirm" class="form-control">
     </div>
-      
-        
-    <label class="offset-3   pt-3" for="pet-select">Type de droit</label>
-
-<select name="droit" value="<?= $droit; ?>" >
-    <option value="">--Choississez une option--</option>
-    <option value="2">Administrateur</option>
-    <option value="3">HOTLINE</option>
-    <option value="4">SAV</option>
-
-</select>
     <div class="form-btn-group text-right">
         <button type="submit" class="btn btn-primary">Valider</button>
     </div>
 </form>
 <script>
-var test = '<?= 'test' ?>
+var test = '<?= 'test' ?>;
 </script>        
 <?php
 require __DIR__ .'/layout/bottom.php';

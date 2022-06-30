@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 juin 2022 à 08:10
+-- Généré le : mer. 29 juin 2022 à 18:22
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -179,7 +179,7 @@ CREATE TABLE `t_d_orderheader_ohr` (
 --
 
 INSERT INTO `t_d_orderheader_ohr` (`OHR_ID`, `ADR_ID_LIV`, `ADR_ID_FAC`, `PMT_ID`, `OSS_ID`, `ETY_ID`, `USR_ID`, `OHR_NUMBER`, `OHR_DATE`) VALUES
-(1, 1, 1, 3, 2, 1, 1, '1', '2022-06-07 13:18:55'),
+(1, 1, 1, 3, 2, 1, 1, '1', '2022-06-27 16:59:14'),
 (2, 2, 1, 1, 3, 3, 2, '2', '2022-06-07 13:22:24'),
 (3, 2, 2, 1, 2, 2, 3, '3', '2022-06-07 13:22:46'),
 (4, 1, 1, 2, 1, 3, 1, '4', '2022-06-07 13:55:23'),
@@ -368,7 +368,9 @@ CREATE TABLE `t_d_usertype_uty` (
 
 INSERT INTO `t_d_usertype_uty` (`UTY_ID`, `UTY_TYPE`) VALUES
 (1, 'VISITOR'),
-(2, 'ADMIN');
+(2, 'ADMIN'),
+(3, 'SAV'),
+(4, 'HOTLINE');
 
 -- --------------------------------------------------------
 
@@ -402,10 +404,10 @@ INSERT INTO `t_d_user_usr` (`USR_ID`, `ADR_ID`, `USR_MAIL`, `USR_PASSWORD`, `USR
 (9, NULL, 'ft@hotmail.fr', 'b70f7d0e2acef2e0fa1c6f117e3c11e0d7082232', 'ft', 'ft', 1),
 (10, NULL, 'toto@gmail.com', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'toto', 'toto', 1),
 (11, NULL, 'titi@gmail.com', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'titi', 'titi', 1),
-(12, NULL, 'gwenael56@hotmail.fr', '613b85c87eb0ebd8f645a65b0b5dba468d968233', 'le Pierres', 'Gwenael', 1),
+(12, NULL, 'gwenael56@hotmail.fr', '613b85c87eb0ebd8f645a65b0b5dba468d968233', 'le Pierres', 'Gwenael', 4),
 (13, NULL, 'gwenael56@hotmail.fr', '613b85c87eb0ebd8f645a65b0b5dba468d968233', 'le pierres', 'Gwenael', 1),
-(14, NULL, 'olivb3d@gmail.com', '5d59964923ee5b1b3700085446b7d84a85e1045e', 'Bednarek', 'Olivier', 1),
-(15, NULL, 'olivier@olivier.fr', '91d7ef0f246558051457a5ec860dd6746bcb2fe0', 'Olivier', 'Olivier', 1);
+(14, NULL, 'olivb3d@gmail.com', '5d59964923ee5b1b3700085446b7d84a85e1045e', 'Bednarek', 'Olivier', 2),
+(15, NULL, 'olivier@olivier.fr', '91d7ef0f246558051457a5ec860dd6746bcb2fe0', 'Olivier', 'Olivier', 3);
 
 --
 -- Index pour les tables déchargées
@@ -576,7 +578,7 @@ ALTER TABLE `t_d_supplier_spl`
 -- AUTO_INCREMENT pour la table `t_d_usertype_uty`
 --
 ALTER TABLE `t_d_usertype_uty`
-  MODIFY `UTY_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `UTY_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `t_d_user_usr`
